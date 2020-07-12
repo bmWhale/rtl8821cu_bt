@@ -42,14 +42,17 @@ The `make` command installs the firmware and module automatically.
 
 Run
 ----
+Switch to wirless mode:
+
+	sudo usb_modeswitch -KW -v 0bda -p c820
 
 Fire up the module with:
 
-	modprobe rtk_btusb
+	sudo insmod ./rtk_btusb.ko
 
 Check its presence with:
 
-	hciconfig
+	hciconfig -a
 		
 If you experience any odd behaviour at this point, power down your device entirely, then reboot. The driver should load automatically.	
 	
